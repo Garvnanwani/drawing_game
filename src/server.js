@@ -1,6 +1,7 @@
 import express from "express"
 import path from "path"
-import * as io from "socket.io"
+import * as socketio from "socket.io"
+import logger from "morgan"
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
@@ -9,8 +10,8 @@ const PORT = process.env.PORT || 3000
 
 app.set("view engine", "pug")
 app.set("views", path.join(__dirname, "views"))
+app.use(logger("dev"))
 app.use(express.static(path.join(__dirname, "static")))
-
 app.get("/", (req, res) => {
   res.render("home")
 })
@@ -19,4 +20,13 @@ const server = app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}`)
 })
 
-const socketio = new io.Server(server)
+const sockets = []
+const io = new socketio.Server(server)
+
+io.on("connection", (socket) => {
+  sockets.push(socket.id)
+})
+
+// setInterval(() => {
+//   console.log(sockets)
+// }, 1000)
