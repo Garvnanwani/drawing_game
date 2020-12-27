@@ -1,6 +1,5 @@
 import gulp from "gulp"
 import sass from "gulp-sass"
-import autoprefixer from "gulp-autoprefixer"
 import minifyCSS from "gulp-csso"
 import del from "del"
 import bro from "gulp-browserify"

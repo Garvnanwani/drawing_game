@@ -1,3 +1,13 @@
 body {
   background-color: red;
 }
+
+@keyframes any {
+  from {
+    color: red;
+  }
+
+  to {
+    color: blue;
+  }
+}
