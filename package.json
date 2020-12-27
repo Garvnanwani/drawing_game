@@ -2,6 +2,7 @@
   "name": "drawing_game",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "repository": "https://github.com/Garvnanwani/drawing_game.git",
   "author": "Garvnanwani <garvnanwani88@gmail.com>",
   "license": "MIT",
@@ -11,5 +12,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^3.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon src/server"
   }
 }
