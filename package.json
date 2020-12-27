@@ -7,7 +7,10 @@
   "author": "Garvnanwani <garvnanwani88@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
     "express": "^4.17.1",
