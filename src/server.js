@@ -20,13 +20,10 @@ const server = app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}`)
 })
 
-const sockets = []
 const io = new socketio.Server(server)
 
 io.on("connection", (socket) => {
-  sockets.push(socket.id)
+  socket.on("helloGuys", () => {
+    console.log("clients says hello")
+  })
 })
-
-// setInterval(() => {
-//   console.log(sockets)
-// }, 1000)
