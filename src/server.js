@@ -3,7 +3,7 @@ import path from "path"
 import * as socketio from "socket.io"
 import logger from "morgan"
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname)
+// const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
 const app = express()
 const PORT = process.env.PORT || 3000
