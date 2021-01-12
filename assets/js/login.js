@@ -4,7 +4,7 @@ const loginForm = document.getElementById("jsLogin")
 
 const logIn = (nickname) => {
   const socket = io("/")
-  socket.emit("setNickname", { nickname })
+  socket.emit(window.events.setNickname, { nickname })
 }
 
 if (!nickname) {

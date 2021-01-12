@@ -3,8 +3,7 @@ import path from "path"
 import * as socketio from "socket.io"
 import logger from "morgan"
 import socketController from "./socketController"
-
-// const __dirname = path.dirname(new URL(import.meta.url).pathname)
+import events from "./events"
 
 const app = express()
 const PORT = process.env.PORT || 5000
@@ -14,7 +13,7 @@ app.set("views", path.join(__dirname, "views"))
 app.use(logger("dev"))
 app.use(express.static(path.join(__dirname, "static")))
 app.get("/", (req, res) => {
-  res.render("home")
+  res.render("home", { events: JSON.stringify(events) })
 })
 
 const server = app.listen(PORT, () => {
