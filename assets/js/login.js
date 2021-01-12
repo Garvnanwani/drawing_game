@@ -3,8 +3,8 @@ const nickname = localStorage.getItem("nickname")
 const loginForm = document.getElementById("jsLogin")
 
 const logIn = (nickname) => {
-  const socket = io("/")
-  socket.emit(window.events.setNickname, { nickname })
+  window.socket = io("/")
+  window.socket.emit(window.events.setNickname, { nickname })
 }
 
 if (!nickname) {
