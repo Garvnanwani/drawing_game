@@ -2,18 +2,26 @@ const body = document.querySelector("body")
 const nickname = localStorage.getItem("nickname")
 const loginForm = document.getElementById("jsLogin")
 
-const handleFormSubmit = (e) => {
-  e.preventDefault()
-  const input = document.querySelector("input")
-  const { value } = input
-  localStorage.setItem("nickname", value)
-  input.value = ""
+const logIn = (nickname) => {
+  const socket = io("/")
+  socket.emit("setNickname", { nickname })
 }
 
 if (!nickname) {
   body.classList.add("loggedOut")
 } else {
   body.classList.add("loggedIn")
+  logIn(nickname)
+}
+
+const handleFormSubmit = (e) => {
+  e.preventDefault()
+  const input = document.querySelector("input")
+  const { value } = input
+  input.value = ""
+  localStorage.setItem("nickname", value)
+  body.className = "loggedIn"
+  logIn(nickname)
 }
 
 if (loginForm) {
