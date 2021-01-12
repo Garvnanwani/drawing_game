@@ -2,11 +2,12 @@ import express from "express"
 import path from "path"
 import * as socketio from "socket.io"
 import logger from "morgan"
+import socketController from "./socketController"
 
 // const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000
 
 app.set("view engine", "pug")
 app.set("views", path.join(__dirname, "views"))
@@ -22,14 +23,4 @@ const server = app.listen(PORT, () => {
 
 const io = new socketio.Server(server)
 
-io.on("connection", (socket) => {
-  socket.on("newMessage", ({ message }) => {
-    socket.broadcast.emit("messageNotif", {
-      message,
-      nickname: socket.nickname || "Anonymous",
-    })
-  })
-  socket.on("setNickname", ({ nickname }) => {
-    socket.nickname = nickname
-  })
-})
+io.on("connection", (socket) => socketController(socket))
