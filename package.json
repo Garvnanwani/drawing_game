@@ -2,6 +2,9 @@
   "name": "drawing_game",
   "version": "1.0.0",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "repository": "https://github.com/Garvnanwani/drawing_game.git",
   "author": "Garvnanwani <garvnanwani88@gmail.com>",
   "license": "MIT",
@@ -33,6 +36,7 @@
     "start": "node src/server.js",
     "dev": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static",
     "dev:assets": "gulp dev",
+    "build": "gulp",
     "postinstall": "gulp default"
   },
   "browserslist": [
