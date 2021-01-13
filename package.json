@@ -30,9 +30,10 @@
     "socket.io": "^3.0.4"
   },
   "scripts": {
+    "start": "node src/server.js",
     "dev": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static",
-    "dev:assets": "gulp",
-    "build": "gulp build"
+    "dev:assets": "gulp dev",
+    "build": "gulp"
   },
   "browserslist": [
 
