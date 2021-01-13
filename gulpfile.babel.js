@@ -54,4 +54,4 @@ gulp.task('heroku:production', function(){
 
 export const dev = gulp.series(clean, styles, js, watchFiles)
 
-export default build = gulp.series(clean, styles, js)
+// export default build = gulp.series(clean, styles, js)
