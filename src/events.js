@@ -7,6 +7,8 @@ const events = {
   newMsg: "newMsg",
   beginPath: "beginPath",
   strokePath: "strokePath",
+  fill: "fill",
+  filled: "filled",
 }
 
 export default events
