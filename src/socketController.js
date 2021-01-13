@@ -5,6 +5,9 @@ const socketController = (socket) => {
     socket.broadcast.emit(events.newUser, { nickname })
     socket.nickname = nickname
   })
+  socket.on(events.disconnect, () => {
+    console.log("disconnected")
+  })
 }
 
 export default socketController
