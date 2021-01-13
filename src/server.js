@@ -6,7 +6,7 @@ import socketController from "./socketController"
 import events from "./events"
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 
 app.set("view engine", "pug")
 app.set("views", path.join(__dirname, "views"))
