@@ -1,12 +1,12 @@
+import { handleNewUser, handleDisconnected } from "./notifications"
 import { handleNewMessage } from "./chat"
-import { handleDisconnected, handleNewUser } from "./notifications"
-import { handleBeganPath, handleFilled, handleStrokedPath } from "./paint"
+import { handleBeganPath, handleStrokedPath, handleFilled } from "./paint"
 import {
-  handleGameEnded,
-  handleGameStarted,
-  handleGameStarting,
-  handleLeaderNotif,
   handlePlayerUpdate,
+  handleGameStarted,
+  handleLeaderNotif,
+  handleGameEnded,
+  handleGameStarting,
 } from "./players"
 
 let socket = null
