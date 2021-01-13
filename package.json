@@ -37,7 +37,7 @@
     "dev": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static",
     "dev:assets": "gulp dev",
     "build": "gulp",
-    "postinstall": "gulp default"
+    "postinstall": "gulp"
   },
   "browserslist": [
 
