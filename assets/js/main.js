@@ -1,4 +1,4 @@
-import "./sockets"
-import "./login"
-import "./chat"
-import "./paint"
+import "./login";
+import "./sockets";
+import "./chat";
+import "./paint";
