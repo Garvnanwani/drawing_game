@@ -1,10 +1,10 @@
-const notifications = document.getElementById("jsNotifs")
+const body = document.getElementById("body")
 
 const fireNotification = (text, color) => {
   const notification = document.createElement("div")
   notification.innerText = text
   notification.style.backgroundColor = color
-  notifications.appendChild(notification)
+  body.appendChild(notification)
 }
 
 export const handleNewUser = ({ nickname }) => {
