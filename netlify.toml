@@ -1,4 +1,0 @@
-[build]
-  base = "src/"
-  command = "yarn run build"
-  publish = "dist/"
