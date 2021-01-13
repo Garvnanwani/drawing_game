@@ -1,5 +1,6 @@
 import { handleNewMessage } from "./chat"
 import { handleDisconnected, handleNewUser } from "./notifications"
+import { handleBeganPath, handleFilled, handleStrokedPath } from "./paint"
 
 let socket = null
 
