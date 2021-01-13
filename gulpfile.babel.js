@@ -48,7 +48,7 @@ const watchFiles = () => {
   gulp.watch(paths.js.watch, js)
 }
 
-gulp.task('heroku:production', function(){
+export default gulp.task('heroku:production', function(){
   runSeq('clean', 'styles', 'js')
 })
 
